@@ -1,23 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button';
-
+import { MaterialModule } from './material.module';
+import { MapaComponent } from './components/mapa/mapa.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MapaComponent
   ],
   imports: [
     BrowserModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBCWEotjIbF5EJX-joz2Picaw-j0rRlttE'
+    }),
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
